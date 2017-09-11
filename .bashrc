@@ -32,21 +32,21 @@ export odrive="$HOME/odrive"
 # Correct minor errors in the spelling of a directory
 shopt -s cdspell
 
-if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
-   . $(brew --prefix)/share/bash-completion/bash_completion
-fi
-
+# Lang configuration
 export LANG=es_ES.UTF-8
 export LANGUAGE=es_ES.UTF-8
 export LC_ALL=es_ES.UTF-8
 export LC_CTYPE=UTF-8
 
+# Prompt & colors
 export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
+# Default text editor
 export EDITOR=/usr/local/bin/subl
 
+# Aliases
 alias ls='ls -GFh'
 alias mpvplay='mpv $(youtube-dl -g --no-warnings `pbpaste`)'
 alias f='open -a Finder ./'
@@ -55,10 +55,12 @@ alias l='ls -CF -lh'
 alias ll='ls -l'
 alias la='ls -A'
 
+# Envs
 eval "$(pyenv init -)"
 eval "$(rbenv init -)"
 eval $(dinghy env)
 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-   . $(brew --prefix)/etc/bash_completion
+# Bash completion
+if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
+   . $(brew --prefix)/share/bash-completion/bash_completion
 fi
