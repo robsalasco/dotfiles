@@ -58,6 +58,7 @@ alias la='ls -A'
 # Envs
 eval "$(pyenv init -)"
 eval "$(rbenv init -)"
+eval "$(nodenv init -)"
 eval $(dinghy env)
 
 # Bash completion
